@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useReducer } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, count: state.count + 1 };
+    case 'TOGGLE_SHOW_TEXT':
+      return { ...state, showText: !state.showText };
+    default:
+      return state;
+  };
+}
 
 export default function UseReducerHook() {
 
-  const [count, setCount] = useState(0);
-  const [showText, setShowText] = useState(true);
+  const [state, dispatch] = useReducer(reducer, {
+    count: 0,
+    showText: true
+  });
+
+  const handleClick = () => {
+    dispatch({ type: 'INCREMENT' });
+    dispatch({ type: 'TOGGLE_SHOW_TEXT' })
+  }
 
   return (
     <>
-      <h1>{count}</h1>
-      <button onClick={() => {
-        setCount(prevState => prevState += 1);
-        setShowText(prevState => !prevState);
-      }}>Click</button>
-      {showText && <p>This is some text.</p>}
+      <h1>{state.count}</h1>
+      <button onClick={handleClick}>Click</button>
+      {state.showText && <p>This is some text.</p>}
     </>
   );
 }
