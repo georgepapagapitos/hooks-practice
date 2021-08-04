@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Button from "./Button";
 
-export default function ImperativeHandle() {
+export default function UseImperativeHandleHook() {
 
   const buttonRef = useRef(null);
 
