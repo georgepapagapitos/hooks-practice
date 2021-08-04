@@ -1,4 +1,5 @@
-import UseMemoHook from './UseMemoHook/UseMemoHook';
+import UseCallbackHook from './UseCallbackHook/UseCallbackHook';
+// import UseMemoHook from './UseMemoHook/UseMemoHook';
 // import UseContextHook from './UseContextHook/UseContextHook';
 // import UseImperativeHandleHook from './UseImperativeHandleHook/UseImperativeHandleHook';
 // import UseLayoutEffectHook from './UseLayoutEffectHook/UseLayoutEffectHook';
@@ -10,7 +11,7 @@ import UseMemoHook from './UseMemoHook/UseMemoHook';
 function App() {
   return (
     <div>
-      <UseMemoHook />
+      <UseCallbackHook />
     </div>
   );
 }
